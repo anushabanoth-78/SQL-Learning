@@ -1,0 +1,28 @@
+CREATE DATABASE company;
+USE company;
+CREATE TABLE Employee(
+ID INT PRIMARY KEY,
+NAME VARCHAR(50),
+SALARY DECIMAL(10,2),
+Date_of_joining DATE
+);
+DESCRIBE Employee;
+DROP TABLE Employee;
+CREATE TABLE Employee(
+ID INT PRIMARY KEY,
+NAME VARCHAR(50),
+SALARY DECIMAL(10,2),
+Date_of_joining DATE
+);
+SHOW TABLES;
+DROP TABLE student;
+SHOW TABLES;
+INSERT INTO Employee (ID,NAME,SALARY,Date_of_joining)
+VALUES
+(1,"Anusha", 60000,),
+(2,"Bhumi",70000);
+SHOW TABLES;
+DESCRIBE Employee;
+SELECT * FROM Employee;
+SELECT * FROM Employee
+ORDER BY ID ASC;
