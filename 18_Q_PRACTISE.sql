@@ -190,6 +190,76 @@ LIMIT 1 OFFSET 2;
 SELECT * FROM Employee
 ORDER BY BETWEEN slary AND AVG(salary)
 
+CREATE DATABASE SRIRAM;
+USE SRIRAM;
+CREATE TABLE Employee (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_id INT,
+    salary INT
+);
+
+INSERT INTO Employee VALUES
+(1, 'A', 101, 50000),
+(2, 'B', 102, 40000),
+(3, 'C', 101, 70000),
+(4, 'D', 103, 45000),
+(5, 'E', 102, 55000),
+(6, 'F', 101, 60000);
+SELECT * FROM Employee;
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+);
+
+INSERT INTO Department VALUES
+(101, 'IT'),
+(102, 'HR'),
+(103, 'Sales'),
+(104, 'Finance');
+
+SELECT * FROM Department;
+
+
+SELECT e.name, d.dept_name
+FROM Employee e
+INNER JOIN Department d
+ON e.dept_id = d.dept_id;
+
+-- J2
+SELECT e.name, e.dept_id, d.dept_name
+FROM Employee e
+LEFT JOIN Department d
+ON e.dept_id = d.dept_id;
+SELECT * FROM Employee;
+SELECT * FROM Department;
+
+-- 
+SELECT d.dept_name
+FROM Employee e
+RIGHT JOIN Department d
+ON e.dept_id =d.dept_id;
+
+--
+
+SELECT e.name,e.dept_id,d.dept_id,d.dept_name
+FROM Employee e
+INNER JOIN Department d
+ON e.dept_id = d.dept_id;
+
+SELECT e.name,e.salary,d.dept_name
+FROM Employee e
+LEFT JOIN Department d
+ON e.dept_id = d.dept_id
+WHERE salary > 50000;
+
+-- 
+SELECT e.name,d.dept_name
+FROM Employee e
+LEFT JOIN Department d
+ON e.dept_id = d.dept_id
+WHERE dept_name = 'IT';
+
 
 
 
