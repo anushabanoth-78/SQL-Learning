@@ -114,8 +114,81 @@ LIMIT 1;
 SELECT * FROM Employee
 ORDER BY salary ASC
 LIMIT 1;
+-- Q12
+SELECT *
+FROM Employee
+ORDER BY salary ASC
+LIMIT 1;
+
+-- q13
+SELECT COUNT(*) FROM Employee;
+
+-- q14
+SELECT SUM(salary) FROM Employee;
+
+-- q15
+ SELECT AVG(salary) FROM Employee;
+
+-- q16
+
+SELECT * FROM Employee
+ORDER BY salary DESC
+LIMIT 1;
+
+-- Q17
+SELECT * FROM Employee
+ORDER BY salary ASC
+LIMIT 1;
 
 -- Q18
+SELECT dept,COUNT(dept) AS eachnumber 
+FROM Employee
+GROUP BY dept;
+
+-- q19
+SELECT dept, AVG(salary) AS eachnumber 
+FROM Employee
+GROUP BY dept;
+
+-- q20
+
+SELECT dept, COUNT(*) AS total_employees
+FROM Employee
+GROUP BY dept
+HAVING COUNT(*) > 2;
+
+-- q21
+SELECT dept, AVG(salary) AS total_employees
+FROM Employee
+GROUP BY dept
+HAVING AVG(salary) > 50000;
+
+-- q22
+SELECT dept, SUM(salary)
+FROM Employee
+GROUP BY dept;
+
+-- q23
+
+SELECT name, salary
+FROM Employee
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM Employee
+);
+-- Q24
+SELECT * FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
+
+-- Q36
+SELECT * FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 2;
+
+-- Q37
+SELECT * FROM Employee
+ORDER BY BETWEEN slary AND AVG(salary)
 
 
 
