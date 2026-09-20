@@ -261,6 +261,56 @@ ON e.dept_id = d.dept_id
 WHERE dept_name = 'IT';
 
 
+-- Create the Employee table
+CREATE DATABASE anusha;
+USE anusha;
+CREATE TABLE Employee (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    dept VARCHAR(50) NOT NULL,
+    salary INT NOT NULL
+);
+
+-- Insert the data
+INSERT INTO Employee (id, name, dept, salary) VALUES
+(1, 'Anu', 'IT', 50000),
+(2, 'Ravi', 'HR', 40000),
+(3, 'Priya', 'IT', 60000),
+(4, 'Kiran', 'Sales', 45000),
+(5, 'Rahul', 'HR', 55000);
+
+SELECT * FROM Employee;
+SELECT name, salary
+FROM Employee;
+
+SELECT * FROM Employee
+WHERE salary > 50000;
+
+SELECT name, dept FROM Employee
+WHERE dept ='IT';
+
+SELECT * FROM  Employee
+WHERE dept = 'HR'
+HAVING salary >45000;
+
+INSERT INTO Employee(id,name,dept,salary)
+VALUES (9,'Neha','IT',52000);
+
+
+SELECT * FROM Employee;
+
+UPDATE employee 
+SET salary = 55000
+WHERE id = 1;
+
+SELECT * FROM Employee;
+
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE Employee
+SET salary = salary + 500
+WHERE dept = 'HR';
+
 
 
 
