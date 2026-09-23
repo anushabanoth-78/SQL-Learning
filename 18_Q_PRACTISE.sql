@@ -484,7 +484,54 @@ SELECT AVG(salary) AS highestsalary
 FROM employees
 
 
+CREATE DATABASE SRI;
+USE SRI;
+CREATE TABLE Employee (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary INT,
+    dept VARCHAR(30)
+);
+-- q1 Insert these 5 employees into the Employee table.
+INSERT INTO Employee
+VALUES
+(1, 'Anu', 30000, 'IT'),
+(2, 'Ravi', 40000, 'HR'),
+(3, 'Priya', 50000, 'IT'),
+(4,' Rahul', 35000,' Sales'),
+(5, 'Sneha', 45000, 'HR');
+-- q2 Display all employees.
+SELECT * FROM Employee;
+-- q3 Display only the name and salary of all employees.
+SELECT name, salary
+FROM Employee
+WHERE salary >45000;
 
+-- q4
+UPDATE Employee
+SET 
+salary = salary +5000
+WHERE id =2;
+
+SELECT * FROM Employee;
+
+-- q6
+DELETE FROM Employee
+WHERE id =5;
+
+SELECT * FROM Employee;
+
+-- q7
+
+-- 		Q9
+TRUNCATE employee;
+
+select * from Employee;
+
+-- 10
+DROP TABLE  Employee;
+ALTER TABLE Employee
+ADD email VARCHAR(100);
 
 
 
