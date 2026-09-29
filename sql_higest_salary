@@ -32,3 +32,13 @@ INSERT INTO Employees (EmployeeID, Name, Department, Salary) VALUES
  -- Find employees who earn less than the average salary
   SELECT * FROM employees
  WHERE salary <(SELECT AVG(salary) FROM employees);
+
+
+ -- Find employees who work in the same department as Anu.
+ SELECT name, department
+FROM employees
+WHERE department = (
+    SELECT department
+    FROM employees
+    WHERE name = 'Anu'
+);
