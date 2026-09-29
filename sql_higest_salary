@@ -26,3 +26,8 @@ INSERT INTO Employees (EmployeeID, Name, Department, Salary) VALUES
  SELECT * FROM employees
  ORDER BY salary DESC
  LIMIT 1;
+ 
+
+
+ SELECT * FROM employees
+ WHERE salary =(SELECT MAX(salary) FROM employees);
