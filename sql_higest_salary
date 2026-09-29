@@ -1,0 +1,22 @@
+CREATE DATABASE anushaaa;
+USE anushaaa;
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Department VARCHAR(50),
+    Salary INT
+);
+
+INSERT INTO Employees (EmployeeID, Name, Department, Salary) VALUES
+(101, 'Anu', 'IT', 50000),
+(102, 'Ravi', 'HR', 40000),
+(103, 'Priya', 'IT', 70000),
+(104, 'Rahul', 'Sales', 45000),
+(105, 'Sneha', 'HR', 60000);
+
+ SELECT * FROM employees;
+ 
+ -- Find employees earning more than the average salary.
+ SELECT name,salary 
+ FROM employees
+ WHERE salary > (SELECT AVG(salary)FROM employees);
